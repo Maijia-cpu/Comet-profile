@@ -9,7 +9,8 @@ maxI=max(avg_read);
 parfor i=1:6
 [param(:,:,i), profiledata(:,:,i), meanbg(:,i), bgvalue(:,:,i),lambda_value(:,i),sigmavalue(:,i),coeff_amp(:,i),center_value(:,i)] = fit_conv_new(profile_meanI,pI,maxI);
 end
-
+%lambda_value and sigmavalue are obtained from analytical fitting
+% param is obtained from MC fitting
 
 for j=1:6
 psfsigma(j)=mean(param(end-200:end,1,j))*13;% unit nm standard devaition of point spread function 
